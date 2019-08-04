@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/0714.dir/main.cpp.o CMakeFiles/0714.dir/poll.cpp.o CMakeFiles/0714.dir/client.cpp.o CMakeFiles/0714.dir/select.cpp.o CMakeFiles/0714.dir/smartPtr.cpp.o  -o 0714 

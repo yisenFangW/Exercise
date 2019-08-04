@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/wefang/CLionProjects/multiThread/NewThread.h
+iostream
+-
+functional
+-
+
+/Users/wefang/CLionProjects/multiThread/Thread.h
+pthread.h
+-
+iostream
+-
+
+/Users/wefang/CLionProjects/multiThread/ThreadTest.h
+Thread.h
+/Users/wefang/CLionProjects/multiThread/Thread.h
+unistd.h
+/Users/wefang/CLionProjects/multiThread/unistd.h
+
+/Users/wefang/CLionProjects/multiThread/main.cpp
+iostream
+-
+thread
+-
+mutex
+-
+ThreadTest.h
+/Users/wefang/CLionProjects/multiThread/ThreadTest.h
+NewThread.h
+/Users/wefang/CLionProjects/multiThread/NewThread.h
+

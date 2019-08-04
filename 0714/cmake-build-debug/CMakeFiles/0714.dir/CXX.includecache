@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/wefang/CLionProjects/0714/main.cpp
+iostream
+-
+string
+-
+vector
+-
+unordered_map
+-
+sstream
+-
+queue
+-
+smartPtr.h
+/Users/wefang/CLionProjects/0714/smartPtr.h
+
+/Users/wefang/CLionProjects/0714/smartPtr.h
+iostream
+-
+vector
+-
+string
+-
+

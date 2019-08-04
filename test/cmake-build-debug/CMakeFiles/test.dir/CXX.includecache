@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/wefang/CLionProjects/test/main.cpp
+iostream
+-
+vector
+-
+algorithm
+-
+string
+-
+stack
+-
+queue
+-
+
