@@ -353,14 +353,136 @@ private:
     int capacity_;
 };
 
+char intToString(int i){
+    if(i>9 || i<0)
+        return -1;
+    return i+'0';
+}
+
+template <typename T>
+string convert(T t){
+    T tmp = t;
+    string res = string();
+    while(tmp!=0){
+        int num = static_cast<int> (tmp%10);
+        char c = intToString(num);
+        res += c;
+        tmp = tmp/10;
+    }
+    reverse(res.begin(), res.end());
+    return res;
+}
+
+int search(vector<int>& nums, int target) {
+    int left = 0, right = nums.size()-1;
+    while(left <= right){
+        if(nums[left] == target)
+            return left;
+        if(nums[right] == target)
+            return right;
+        int mid = left + (right-left)/2;
+        if(nums[mid] == target)
+            return mid;
+        if(nums[mid] < nums[right]){
+            if(target > nums[mid] && target < nums[right])
+                left = mid+1;
+            else
+                right = mid-1;
+        }else{
+            if(target > nums[left] && target < nums[mid])
+                right = mid-1;
+            else
+                left = mid+1;
+        }
+    }
+    return -1;
+}
+
+TreeNode* invertTree(TreeNode* root) {
+    if(!root) return nullptr;
+    TreeNode* tmp = root->right;
+    root->right = invertTree(root->left);
+    root->left = invertTree(tmp);
+    return root;
+}
+
+//这样写会超时
+vector<int> findAnagrams2(string s, string p) {
+    if(s.empty() || p.empty() || s.size() < p.size())
+        return {};
+    vector<int> res;
+    int pn = p.size();
+    sort(p.begin(), p.end());
+    for(int i=0;i<s.size()-pn+1;++i){
+        string tmp = s.substr(i, pn);
+        sort(tmp.begin(), tmp.end());
+        if(tmp == p) res.push_back(i);
+    }
+    return res;
+}
+
+
+//what fuck！还是会超时；
+vector<int> findAnagrams3(string s, string p) {
+    if(s.empty() || p.empty() || s.size() < p.size())
+        return {};
+    vector<int> res;
+    int ns = s.size(), np = p.size();
+    unordered_map<int, int> m;
+    for(auto c:p) ++m[c];
+    unordered_map<int, int> tm = m;
+    bool flag = true;
+    for(int i=0;i<ns-np+1;++i){
+        flag = true;
+        tm = m;
+        for(int count=0;count<np;++count){
+            if(tm.count(s[i+count]) == 0 || tm[s[i+count]] == 0) {
+                flag = false;
+                break;
+            }
+            else
+                --tm[s[i+count]];
+        }
+        if(flag) res.push_back(i);
+    }
+    return res;
+}
+
+vector<int> findAnagrams(string s, string p) {
+    if (s.empty() || p.empty() || s.size() < p.size())
+        return {};
+    vector<int> win_s(26, 0), win_p(26, 0), res;
+    int l = 0, r = -1;
+    for(int i=0;i<p.size();++i){
+        ++win_p[p[i] - 'a'];
+        ++win_s[s[++r] - 'a'];
+    }
+    if(win_s == win_p) res.push_back(l);
+    while(r < s.size()-1){
+        --win_s[s[l++] - 'a'];
+        ++win_s[s[++r] - 'a'];
+        if(win_s == win_p)
+            res.push_back(l);
+    }
+    return res;
+}
 
 int main() {
-    LRUCache lc(2);
-    lc.put(1,1);
-    lc.put(2,2);
-    cout<<lc.get(1)<<endl;
-    lc.put(3,3);
-    cout<<lc.get(2)<<endl;
+    string s = "cbaebabacd";
+    string p = "abc";
+    vector<int> res = findAnagrams(s, p);
+    for(auto i:res)
+        cout<<i<<endl;
     cout<<"hello world;";
     return 0;
 }
+
+
+
+
+
+
+
+
+
+

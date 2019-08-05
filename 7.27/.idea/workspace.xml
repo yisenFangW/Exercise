@@ -11,7 +11,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65e3bf9c-503e-4f1e-8980-ac7afbe4a410" name="Default Changelist" comment="" />
+    <list default="true" id="65e3bf9c-503e-4f1e-8980-ac7afbe4a410" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,16 +24,36 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="353" column="2" lean-forward="true" selection-start-line="309" selection-end-line="353" selection-end-column="2" />
+            <state relative-caret-position="259">
+              <caret line="457" column="30" lean-forward="true" selection-start-line="457" selection-start-column="30" selection-end-line="457" selection-end-column="30" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#8705#8717#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,6 +132,9 @@
       <find>MutexLockGu</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -125,17 +150,19 @@
         <option value="$PROJECT_DIR$/Thread.cpp" />
         <option value="$PROJECT_DIR$/Thread.h" />
         <option value="$PROJECT_DIR$/ThreadPool.h" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/90e482c2-ff24-408b-a27b-c97a4a541509/console_1.sql" />
         <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="223" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="123" />
     <option name="y" value="23" />
-    <option name="width" value="1399" />
+    <option name="width" value="1499" />
     <option name="height" value="947" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -161,7 +188,11 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
@@ -195,34 +226,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564235078581</updated>
-      <workItem from="1564235079829" duration="49824000" />
+      <workItem from="1564235079829" duration="58322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49824000" />
+    <option name="totallyTimeSpent" value="58322000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="223" y="23" width="1399" height="947" extended-state="1" />
+    <frame x="123" y="23" width="1499" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6753927" visible="true" weight="0.16184112" />
-      <window_info id="Structure" order="1" sideWeight="0.32460734" side_tool="true" visible="true" weight="0.16184112" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67571646" visible="true" weight="0.15065654" />
+      <window_info id="Structure" order="1" sideWeight="0.32428357" side_tool="true" visible="true" weight="0.15065654" />
       <window_info anchor="bottom" id="CMake" weight="0.32961586" />
-      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Database Changes" weight="0.32961586" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Messages" weight="0.36587983" />
+      <window_info anchor="bottom" id="Messages" weight="0.3655514" />
       <window_info anchor="bottom" id="Terminal" weight="0.32961586" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Database Console" weight="0.30359355" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28996283" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17843866" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2639405" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Database" weight="0.32962137" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -301,13 +333,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>360</line>
-          <option name="timeStamp" value="28" />
+          <line>472</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>362</line>
-          <option name="timeStamp" value="30" />
+          <line>434</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -482,12 +514,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/90e482c2-ff24-408b-a27b-c97a4a541509/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/90e482c2-ff24-408b-a27b-c97a4a541509/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="353" column="2" lean-forward="true" selection-start-line="309" selection-end-line="353" selection-end-column="2" />
+        <state relative-caret-position="259">
+          <caret line="457" column="30" lean-forward="true" selection-start-line="457" selection-start-column="30" selection-end-line="457" selection-end-column="30" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#8705#8717#0" expanded="true" />
           </folding>
         </state>
       </provider>
