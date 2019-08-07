@@ -467,12 +467,154 @@ vector<int> findAnagrams(string s, string p) {
     return res;
 }
 
+vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {
+    sort(people.begin(), people.end(), [](vector<int> v1, vector<int> v2){
+        if(v1[0] == v2[0]) return v1[1]<v2[1];
+        else return v1[0]>v2[0];
+        });
+    vector<vector<int>> res;
+    for(auto p:people)
+        res.insert(res.begin()+p[1], p);
+    return res;
+}
+
+//设定这个start参数应该是为了去重，如果不加这个参数，应该是会存在很多重复的？
+void combinationSum(vector<int>& candidates, int target, int start, vector<int>& vec, vector<vector<int>>& res){
+    if(target < 0) return;
+    if(0 == target) {
+        res.push_back(vec);
+        return;
+    }
+    for(int i=start;i<candidates.size();++i){
+        vec.push_back(candidates[i]);
+        combinationSum(candidates, target - candidates[i], i,vec, res);
+        vec.pop_back();
+    }
+}
+
+vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+    if(candidates.empty() || target<=0) return {};
+    vector<vector<int>> res;
+    vector<int> vec;
+    combinationSum(candidates, target, 0, vec, res);
+    return res;
+}
+
+void letterCombinations(string& digits, vector<string>& dict, int level, string& out, vector<string>& res){
+    if(level == digits.size()){
+        res.push_back(out);
+        return;   //注意这个return一定要加啊，不然就会完全停不下来；
+    }
+    string str = dict[digits[level] - '0'];
+    for(auto c:str) {
+        out+=c;
+        letterCombinations(digits, dict, level + 1, out, res);
+        out.pop_back();
+    }
+}
+
+vector<string> letterCombinations(string digits) {
+    if(digits.empty()) return {};
+    //因为是从2开始，所以前面两个为空啊
+    vector<string> dict{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    vector<string> res;
+    string out;
+    letterCombinations(digits, dict, 0, out, res);
+    return res;
+}
+
+int hammingDistance2(int x, int y) {
+    int res = 0;
+    while(x!=0 || y!=0){
+        int tmpx = x % 2;
+        x /= 2;
+        int tmpy = y % 2;
+        y /= 2;
+        if(tmpx != tmpy)
+            ++res;
+    }
+    return res;
+}
+
+int hammingDistance(int x, int y) {
+    int res = 0;
+    for(int i=0;i<32;++i){
+        if((x & 1 << i) ^ (y & 1 <<i))
+            ++res;
+    }
+    return res;
+}
+
+//前缀树学习实现
+struct TrieNode{
+    bool isWord;
+    TrieNode* next[26];
+    TrieNode(){
+        memset(next, NULL, sizeof(next));
+        isWord = false;
+    }
+    ~TrieNode(){
+        for(int i=0;i<26;++i)
+            delete next[i];
+    }
+};
+
+class Trie {
+    TrieNode* root;
+public:
+    /** Initialize your data structure here. */
+    Trie() {
+        root = new TrieNode();
+    }
+
+    ~Trie(){
+        delete root;
+    }
+
+    /** Inserts a word into the trie. */
+    void insert(string word) {
+        if(word.empty()) return;
+        TrieNode* p = root;
+        for(int i=0;i<word.size();++i){
+            if(p->next[word[i] - 'a'] == NULL){
+                p->next[word[i] - 'a'] = new TrieNode();
+            }
+            p = p->next[word[i] - 'a'];
+        }
+        p->isWord = true;
+    }
+
+    /** Returns if the word is in the trie. */
+    bool search(string word) {
+        if(word.empty()) return true;
+        TrieNode* p = root;
+        for(int i=0;i<word.size() && p;++i)
+            p = p->next[word[i] - 'a'];
+        return p && p->isWord;
+    }
+
+    /** Returns if there is any word in the trie that starts with the given prefix. */
+    bool startsWith(string prefix) {
+        if(prefix.empty()) return true;
+        TrieNode* p = root;
+        for(int i=0;i<prefix.size() && p;++i)
+            p = p->next[prefix[i] - 'a'];
+        return p;
+    }
+};
+
+int countSubstrings(string s) {
+
+}
+
 int main() {
-    string s = "cbaebabacd";
-    string p = "abc";
-    vector<int> res = findAnagrams(s, p);
-    for(auto i:res)
-        cout<<i<<endl;
+    vector<string> res;
+    string digits = "23";
+    res = letterCombinations(digits);
+    cout<<res.size()<<endl;
+    for(auto str : res)
+        cout<< str <<" ";
+    cout<<endl;
     cout<<"hello world;";
     return 0;
 }
