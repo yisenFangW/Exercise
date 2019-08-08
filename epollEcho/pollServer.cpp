@@ -65,6 +65,7 @@ void pollServer::dopoll(int listenfd) {
                     exit(1);
                 }
             }
+
             fprintf(stdout, "accept a new client: %s:%d\n", inet_ntoa(cliaddr.sin_addr),cliaddr.sin_port);
             int i = 1;
             for(i=1;i<OPEN_MAX;++i) {

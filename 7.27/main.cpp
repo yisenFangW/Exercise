@@ -603,8 +603,11 @@ public:
     }
 };
 
-int countSubstrings(string s) {
+bool isSubstring(string s){
+    int left = 0, right = s.size()-1;
+    while(left <= right){
 
+    }
 }
 
 int main() {

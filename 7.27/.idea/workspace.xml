@@ -12,10 +12,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65e3bf9c-503e-4f1e-8980-ac7afbe4a410" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/7_27" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/7_27" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/7_27.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/7_27.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../epollEcho/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../epollEcho/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../epollEcho/pollServer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../epollEcho/pollServer.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="606" column="4" selection-start-line="606" selection-start-column="4" selection-end-line="606" selection-end-column="4" />
+            <state relative-caret-position="334">
+              <caret line="622" column="25" lean-forward="true" selection-start-line="622" selection-start-column="25" selection-end-line="622" selection-end-column="25" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -159,9 +159,9 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="311" />
+    <option name="x" value="204" />
     <option name="y" value="23" />
-    <option name="width" value="1369" />
+    <option name="width" value="1391" />
     <option name="height" value="952" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -229,19 +229,19 @@
       <option name="presentableId" value="Default" />
       <updated>1564235078581</updated>
       <workItem from="1564235079829" duration="66591000" />
-      <workItem from="1565075581312" duration="3156000" />
+      <workItem from="1565075581312" duration="3707000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69747000" />
+    <option name="totallyTimeSpent" value="70298000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="311" y="23" width="1369" height="952" extended-state="0" />
+    <frame x="204" y="23" width="1391" height="952" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67487687" visible="true" weight="0.16780561" />
-      <window_info id="Structure" order="1" sideWeight="0.32512316" side_tool="true" visible="true" weight="0.16780561" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67487687" visible="true" weight="0.16504854" />
+      <window_info id="Structure" order="1" sideWeight="0.32512316" side_tool="true" visible="true" weight="0.16504854" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -253,7 +253,7 @@
       <window_info anchor="bottom" id="Database Console" order="7" weight="0.30359355" />
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.32961586" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.30402932" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.54770756" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.54679805" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="CMake" order="13" weight="0.32961586" />
@@ -341,7 +341,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>614</line>
+          <line>621</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
@@ -459,8 +459,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="606" column="4" selection-start-line="606" selection-start-column="4" selection-end-line="606" selection-end-column="4" />
+        <state relative-caret-position="334">
+          <caret line="622" column="25" lean-forward="true" selection-start-line="622" selection-start-column="25" selection-end-line="622" selection-end-column="25" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

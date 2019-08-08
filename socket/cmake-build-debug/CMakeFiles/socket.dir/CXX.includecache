@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/wefang/CLionProjects/socket/epollEcho.cpp
+epollEcho.h
+/Users/wefang/CLionProjects/socket/epollEcho.h
+
+/Users/wefang/CLionProjects/socket/epollEcho.h
+stdio.h
+-
+stdlib.h
+-
+string
+-
+errno.h
+-
+netinet/in.h
+-
+sys/socket.h
+-
+unistd.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+sys/types.h
+-
+poll.h
+-
+iostream
+-
+
+/Users/wefang/CLionProjects/socket/main.cpp
+iostream
+-
+epollEcho.h
+/Users/wefang/CLionProjects/socket/epollEcho.h
+
