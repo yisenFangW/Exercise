@@ -13,10 +13,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fbe65b72-f148-43cf-a358-f0b012560249" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../7.27/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../7.27/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../7.27/cmake-build-debug/7_27" beforeDir="false" afterPath="$PROJECT_DIR$/../7.27/cmake-build-debug/7_27" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../7.27/cmake-build-debug/CMakeFiles/7_27.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../7.27/cmake-build-debug/CMakeFiles/7_27.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../7.27/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../7.27/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../epollEcho/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../epollEcho/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../epollEcho/pollServer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../epollEcho/pollServer.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -84,7 +85,7 @@
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
     <option name="x" value="270" />
-    <option name="y" value="23" />
+    <option name="y" value="43" />
     <option name="width" value="1410" />
     <option name="height" value="952" />
   </component>
@@ -145,19 +146,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1565191859595</updated>
-      <workItem from="1565191861174" duration="7603000" />
+      <workItem from="1565191861174" duration="7827000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7603000" />
+    <option name="totallyTimeSpent" value="7827000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="270" y="23" width="1410" height="952" extended-state="0" />
-    <editor active="true" />
+    <frame x="270" y="43" width="1410" height="952" extended-state="0" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.092047125" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.092047125" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="CMake" weight="0.32881773" />
       <window_info anchor="bottom" id="Database Changes" />

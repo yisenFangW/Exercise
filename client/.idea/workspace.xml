@@ -13,9 +13,11 @@
   <component name="ChangeListManager">
     <list default="true" id="71cd46bb-78d7-4ced-aa2f-eb6b8fd51001" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../7.27/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../7.27/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../7.27/cmake-build-debug/7_27" beforeDir="false" afterPath="$PROJECT_DIR$/../7.27/cmake-build-debug/7_27" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../7.27/cmake-build-debug/CMakeFiles/7_27.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../7.27/cmake-build-debug/CMakeFiles/7_27.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../7.27/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../7.27/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../epollEcho/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../epollEcho/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../epollEcho/pollServer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../epollEcho/pollServer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../socket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../socket/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="105" column="46" selection-start-line="105" selection-start-column="46" selection-end-line="105" selection-end-column="46" />
+            <state relative-caret-position="960">
+              <caret line="101" column="28" lean-forward="true" selection-start-line="101" selection-start-column="28" selection-end-line="101" selection-end-column="28" />
               <folding>
                 <element signature="e#0#4#0" />
                 <element signature="e#1279#1302#0" expanded="true" />
@@ -60,7 +62,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1342" />
     <option name="height" value="947" />
@@ -113,15 +115,15 @@
       <updated>1563555309194</updated>
       <workItem from="1563555310478" duration="8548000" />
       <workItem from="1564300679523" duration="630000" />
-      <workItem from="1565195782615" duration="2650000" />
+      <workItem from="1565195782615" duration="2654000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11828000" />
+    <option name="totallyTimeSpent" value="11832000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1342" height="947" extended-state="1" />
+    <frame x="0" y="23" width="1342" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.069767445" />
@@ -155,8 +157,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="105" column="46" selection-start-line="105" selection-start-column="46" selection-end-line="105" selection-end-column="46" />
+        <state relative-caret-position="960">
+          <caret line="101" column="28" lean-forward="true" selection-start-line="101" selection-start-column="28" selection-end-line="101" selection-end-column="28" />
           <folding>
             <element signature="e#0#4#0" />
             <element signature="e#1279#1302#0" expanded="true" />

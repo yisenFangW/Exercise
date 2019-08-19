@@ -13,9 +13,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0f5f0cc0-11cf-4a9c-af60-f75ad927c23e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../7.27/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../7.27/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../7.27/cmake-build-debug/7_27" beforeDir="false" afterPath="$PROJECT_DIR$/../7.27/cmake-build-debug/7_27" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../7.27/cmake-build-debug/CMakeFiles/7_27.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../7.27/cmake-build-debug/CMakeFiles/7_27.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../7.27/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../7.27/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pollServer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/pollServer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../socket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../socket/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,7 +88,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="121" />
-    <option name="y" value="59" />
+    <option name="y" value="23" />
     <option name="width" value="1265" />
     <option name="height" value="952" />
   </component>
@@ -155,7 +157,7 @@
     <option name="totallyTimeSpent" value="6015000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="121" y="59" width="1265" height="952" extended-state="0" />
+    <frame x="121" y="23" width="1265" height="952" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.139324" />
@@ -163,7 +165,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25492612" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.25492612" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39901477" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

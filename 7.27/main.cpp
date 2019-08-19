@@ -314,9 +314,9 @@ public:
 
     int get(int key) {
         auto it = m.find(key);
-        if(it == m.end()) return -1;
+        if (it == m.end()) return -1;
         int res = m[key];
-        for(auto i = queue_.begin();i!=queue_.end();++i) {
+        for (auto i = queue_.begin(); i != queue_.end(); ++i) {
             if ((*i).first == key) {
                 queue_.erase(i);
                 break;
@@ -328,10 +328,10 @@ public:
 
     void put(int key, int value) {
         auto it = m.find(key);
-        if(it == m.end())
+        if (it == m.end())
             queue_.push_back(make_pair(key, value));
-        else{
-            for(auto i = queue_.begin();i!=queue_.end();++i) {
+        else {
+            for (auto i = queue_.begin(); i != queue_.end(); ++i) {
                 if ((*i).first == key) {
                     queue_.erase(i);
                     break;
@@ -339,7 +339,7 @@ public:
             }
             queue_.push_back(make_pair(key, value));
         }
-        if(queue_.size() > capacity_){
+        if (queue_.size() > capacity_) {
             int tmp = queue_.front().first;
             queue_.pop_front();
             m.erase(tmp);
@@ -353,54 +353,54 @@ private:
     int capacity_;
 };
 
-char intToString(int i){
-    if(i>9 || i<0)
+char intToString(int i) {
+    if (i > 9 || i < 0)
         return -1;
-    return i+'0';
+    return i + '0';
 }
 
-template <typename T>
-string convert(T t){
+template<typename T>
+string convert(T t) {
     T tmp = t;
     string res = string();
-    while(tmp!=0){
-        int num = static_cast<int> (tmp%10);
+    while (tmp != 0) {
+        int num = static_cast<int> (tmp % 10);
         char c = intToString(num);
         res += c;
-        tmp = tmp/10;
+        tmp = tmp / 10;
     }
     reverse(res.begin(), res.end());
     return res;
 }
 
-int search(vector<int>& nums, int target) {
-    int left = 0, right = nums.size()-1;
-    while(left <= right){
-        if(nums[left] == target)
+int search(vector<int> &nums, int target) {
+    int left = 0, right = nums.size() - 1;
+    while (left <= right) {
+        if (nums[left] == target)
             return left;
-        if(nums[right] == target)
+        if (nums[right] == target)
             return right;
-        int mid = left + (right-left)/2;
-        if(nums[mid] == target)
+        int mid = left + (right - left) / 2;
+        if (nums[mid] == target)
             return mid;
-        if(nums[mid] < nums[right]){
-            if(target > nums[mid] && target < nums[right])
-                left = mid+1;
+        if (nums[mid] < nums[right]) {
+            if (target > nums[mid] && target < nums[right])
+                left = mid + 1;
             else
-                right = mid-1;
-        }else{
-            if(target > nums[left] && target < nums[mid])
-                right = mid-1;
+                right = mid - 1;
+        } else {
+            if (target > nums[left] && target < nums[mid])
+                right = mid - 1;
             else
-                left = mid+1;
+                left = mid + 1;
         }
     }
     return -1;
 }
 
-TreeNode* invertTree(TreeNode* root) {
-    if(!root) return nullptr;
-    TreeNode* tmp = root->right;
+TreeNode *invertTree(TreeNode *root) {
+    if (!root) return nullptr;
+    TreeNode *tmp = root->right;
     root->right = invertTree(root->left);
     root->left = invertTree(tmp);
     return root;
@@ -408,15 +408,15 @@ TreeNode* invertTree(TreeNode* root) {
 
 //这样写会超时
 vector<int> findAnagrams2(string s, string p) {
-    if(s.empty() || p.empty() || s.size() < p.size())
+    if (s.empty() || p.empty() || s.size() < p.size())
         return {};
     vector<int> res;
     int pn = p.size();
     sort(p.begin(), p.end());
-    for(int i=0;i<s.size()-pn+1;++i){
+    for (int i = 0; i < s.size() - pn + 1; ++i) {
         string tmp = s.substr(i, pn);
         sort(tmp.begin(), tmp.end());
-        if(tmp == p) res.push_back(i);
+        if (tmp == p) res.push_back(i);
     }
     return res;
 }
@@ -424,26 +424,25 @@ vector<int> findAnagrams2(string s, string p) {
 
 //what fuck！还是会超时；
 vector<int> findAnagrams3(string s, string p) {
-    if(s.empty() || p.empty() || s.size() < p.size())
+    if (s.empty() || p.empty() || s.size() < p.size())
         return {};
     vector<int> res;
     int ns = s.size(), np = p.size();
     unordered_map<int, int> m;
-    for(auto c:p) ++m[c];
+    for (auto c:p) ++m[c];
     unordered_map<int, int> tm = m;
     bool flag = true;
-    for(int i=0;i<ns-np+1;++i){
+    for (int i = 0; i < ns - np + 1; ++i) {
         flag = true;
         tm = m;
-        for(int count=0;count<np;++count){
-            if(tm.count(s[i+count]) == 0 || tm[s[i+count]] == 0) {
+        for (int count = 0; count < np; ++count) {
+            if (tm.count(s[i + count]) == 0 || tm[s[i + count]] == 0) {
                 flag = false;
                 break;
-            }
-            else
-                --tm[s[i+count]];
+            } else
+                --tm[s[i + count]];
         }
-        if(flag) res.push_back(i);
+        if (flag) res.push_back(i);
     }
     return res;
 }
@@ -453,68 +452,68 @@ vector<int> findAnagrams(string s, string p) {
         return {};
     vector<int> win_s(26, 0), win_p(26, 0), res;
     int l = 0, r = -1;
-    for(int i=0;i<p.size();++i){
+    for (int i = 0; i < p.size(); ++i) {
         ++win_p[p[i] - 'a'];
         ++win_s[s[++r] - 'a'];
     }
-    if(win_s == win_p) res.push_back(l);
-    while(r < s.size()-1){
+    if (win_s == win_p) res.push_back(l);
+    while (r < s.size() - 1) {
         --win_s[s[l++] - 'a'];
         ++win_s[s[++r] - 'a'];
-        if(win_s == win_p)
+        if (win_s == win_p)
             res.push_back(l);
     }
     return res;
 }
 
-vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {
-    sort(people.begin(), people.end(), [](vector<int> v1, vector<int> v2){
-        if(v1[0] == v2[0]) return v1[1]<v2[1];
-        else return v1[0]>v2[0];
-        });
+vector<vector<int>> reconstructQueue(vector<vector<int>> &people) {
+    sort(people.begin(), people.end(), [](vector<int> v1, vector<int> v2) {
+        if (v1[0] == v2[0]) return v1[1] < v2[1];
+        else return v1[0] > v2[0];
+    });
     vector<vector<int>> res;
-    for(auto p:people)
-        res.insert(res.begin()+p[1], p);
+    for (auto p:people)
+        res.insert(res.begin() + p[1], p);
     return res;
 }
 
 //设定这个start参数应该是为了去重，如果不加这个参数，应该是会存在很多重复的？
-void combinationSum(vector<int>& candidates, int target, int start, vector<int>& vec, vector<vector<int>>& res){
-    if(target < 0) return;
-    if(0 == target) {
+void combinationSum(vector<int> &candidates, int target, int start, vector<int> &vec, vector<vector<int>> &res) {
+    if (target < 0) return;
+    if (0 == target) {
         res.push_back(vec);
         return;
     }
-    for(int i=start;i<candidates.size();++i){
+    for (int i = start; i < candidates.size(); ++i) {
         vec.push_back(candidates[i]);
-        combinationSum(candidates, target - candidates[i], i,vec, res);
+        combinationSum(candidates, target - candidates[i], i, vec, res);
         vec.pop_back();
     }
 }
 
-vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-    if(candidates.empty() || target<=0) return {};
+vector<vector<int>> combinationSum(vector<int> &candidates, int target) {
+    if (candidates.empty() || target <= 0) return {};
     vector<vector<int>> res;
     vector<int> vec;
     combinationSum(candidates, target, 0, vec, res);
     return res;
 }
 
-void letterCombinations(string& digits, vector<string>& dict, int level, string& out, vector<string>& res){
-    if(level == digits.size()){
+void letterCombinations(string &digits, vector<string> &dict, int level, string &out, vector<string> &res) {
+    if (level == digits.size()) {
         res.push_back(out);
         return;   //注意这个return一定要加啊，不然就会完全停不下来；
     }
     string str = dict[digits[level] - '0'];
-    for(auto c:str) {
-        out+=c;
+    for (auto c:str) {
+        out += c;
         letterCombinations(digits, dict, level + 1, out, res);
         out.pop_back();
     }
 }
 
 vector<string> letterCombinations(string digits) {
-    if(digits.empty()) return {};
+    if (digits.empty()) return {};
     //因为是从2开始，所以前面两个为空啊
     vector<string> dict{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
     vector<string> res;
@@ -525,12 +524,12 @@ vector<string> letterCombinations(string digits) {
 
 int hammingDistance2(int x, int y) {
     int res = 0;
-    while(x!=0 || y!=0){
+    while (x != 0 || y != 0) {
         int tmpx = x % 2;
         x /= 2;
         int tmpy = y % 2;
         y /= 2;
-        if(tmpx != tmpy)
+        if (tmpx != tmpy)
             ++res;
     }
     return res;
@@ -538,45 +537,47 @@ int hammingDistance2(int x, int y) {
 
 int hammingDistance(int x, int y) {
     int res = 0;
-    for(int i=0;i<32;++i){
-        if((x & 1 << i) ^ (y & 1 <<i))
+    for (int i = 0; i < 32; ++i) {
+        if ((x & 1 << i) ^ (y & 1 << i))
             ++res;
     }
     return res;
 }
 
 //前缀树学习实现
-struct TrieNode{
+struct TrieNode {
     bool isWord;
-    TrieNode* next[26];
-    TrieNode(){
+    TrieNode *next[26];
+
+    TrieNode() {
         memset(next, NULL, sizeof(next));
         isWord = false;
     }
-    ~TrieNode(){
-        for(int i=0;i<26;++i)
+
+    ~TrieNode() {
+        for (int i = 0; i < 26; ++i)
             delete next[i];
     }
 };
 
 class Trie {
-    TrieNode* root;
+    TrieNode *root;
 public:
     /** Initialize your data structure here. */
     Trie() {
         root = new TrieNode();
     }
 
-    ~Trie(){
+    ~Trie() {
         delete root;
     }
 
     /** Inserts a word into the trie. */
     void insert(string word) {
-        if(word.empty()) return;
-        TrieNode* p = root;
-        for(int i=0;i<word.size();++i){
-            if(p->next[word[i] - 'a'] == NULL){
+        if (word.empty()) return;
+        TrieNode *p = root;
+        for (int i = 0; i < word.size(); ++i) {
+            if (p->next[word[i] - 'a'] == NULL) {
                 p->next[word[i] - 'a'] = new TrieNode();
             }
             p = p->next[word[i] - 'a'];
@@ -586,41 +587,341 @@ public:
 
     /** Returns if the word is in the trie. */
     bool search(string word) {
-        if(word.empty()) return true;
-        TrieNode* p = root;
-        for(int i=0;i<word.size() && p;++i)
+        if (word.empty()) return true;
+        TrieNode *p = root;
+        for (int i = 0; i < word.size() && p; ++i)
             p = p->next[word[i] - 'a'];
         return p && p->isWord;
     }
 
     /** Returns if there is any word in the trie that starts with the given prefix. */
     bool startsWith(string prefix) {
-        if(prefix.empty()) return true;
-        TrieNode* p = root;
-        for(int i=0;i<prefix.size() && p;++i)
+        if (prefix.empty()) return true;
+        TrieNode *p = root;
+        for (int i = 0; i < prefix.size() && p; ++i)
             p = p->next[prefix[i] - 'a'];
         return p;
     }
 };
 
-bool isSubstring(string s){
-    int left = 0, right = s.size()-1;
-    while(left <= right){
-
+bool canPartition(vector<int> &nums) {
+    if (nums.empty()) return false;
+    int sum = 0;
+    for (auto num : nums) sum += num;
+    if (sum & 1) return false;
+    int target = sum >> 1;
+    vector<bool> dp(target, false);
+    dp[0] = true;
+    for (auto num : nums) {
+        for (int i = target; i >= num; i--) {
+            dp[i] = dp[i] || dp[i - num];
+        }
     }
+    return dp[target];
+}
+
+vector<int> productExceptSelf2(vector<int> &nums) {
+    if (nums.empty()) return {};
+    vector<int> res(nums.size(), 1);
+    for (int i = 0; i < nums.size(); ++i) {
+        int sum = 1;
+        for (int j = 0; j < nums.size(); ++j) {
+            if (i == j) continue;
+            sum *= nums[j];
+        }
+        res[i] = sum;
+    }
+    return res;
+}
+
+vector<int> productExceptSelf(vector<int> &nums) {
+    if (nums.empty()) return {};
+    vector<int> lefRes(nums.size(), 1), rightRes(nums.size(), 1), res(nums.size(), 1);
+    for (int i = 0; i < nums.size() - 1; ++i)
+        lefRes[i + 1] = nums[i] * lefRes[i];
+    for (int i = nums.size() - 1; i > 0; --i)
+        rightRes[i - 1] = rightRes[i] * nums[i];
+    for (int i = 0; i < nums.size(); ++i)
+        res[i] = lefRes[i] * rightRes[i];
+    return res;
+}
+
+vector<int> findDisappearedNumbers(vector<int> &nums) {
+    if (nums.empty()) return {};
+    vector<int> res;
+    for (auto num : nums) {
+        int index = abs(num) - 1;
+        nums[index] = nums[index] > 0 ? -nums[index] : nums[index];
+    }
+    for (int i = 0; i < nums.size(); ++i) {
+        if (nums[i] > 0)
+            res.push_back(i + 1);
+    }
+    return res;
+}
+
+vector<int> searchRange(vector<int> &nums, int target) {
+    if (nums.empty() || target > nums.back() || target < nums.front()) return {-1, -1};
+    int left = 0, right = nums.size() - 1;
+    int mid = 0;
+    while (left <= right) {
+        mid = left + (right - left) / 2;
+        if (target == nums[mid])
+            break;
+        if (target > nums[mid])
+            left = mid + 1;
+        else
+            right = mid - 1;
+    }
+    if (left > right) return {-1, -1};
+    left = right = mid;
+    while (left >= 0 && nums[left] == target)
+        --left;
+    while (right < nums.size() && nums[right] == target)
+        ++right;
+    return {left + 1, right - 1};
+}
+
+int search2(vector<int> &nums, int target) {
+    if (nums.empty()) return -1;
+    int left = 0, right = nums.size() - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (nums[mid] == target) return mid;
+        if (nums[mid] < nums[right]) {
+            if (target > nums[mid] && target <= nums[right])
+                left = mid + 1;
+            else
+                right = mid - 1;
+        } else {
+            if (target >= nums[left] && target < nums[mid])
+                right = mid - 1;
+            else
+                left = mid + 1;
+        }
+    }
+    return -1;
+}
+
+void stringtodata() {
+    string s = "2019-03-20";
+    int month = stoi(s.substr(5, 2));
+    cout << month << endl;
+}
+
+bool isInVector(vector<int> &nums, int target) {
+    int left = 0, right = nums.size() - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (nums[left] == target || nums[right] == target || nums[mid] == target)
+            return true;
+        if (nums[mid] < target)
+            left = mid + 1;
+        else
+            right = mid - 1;
+    }
+    return false;
+}
+
+vector<int> intersection2(vector<int> &nums1, vector<int> &nums2) {
+    if (nums1.empty() || nums2.empty()) return {};
+    sort(nums1.begin(), nums1.end());
+    sort(nums2.begin(), nums2.end());
+    vector<int> res;
+    for (auto num : nums2) {
+        if (num > nums1.back() || num < nums1.front())
+            continue;
+        if (isInVector(nums1, num)) {
+            if (res.empty() || num != res.back())
+                res.push_back(num);
+        }
+    }
+    return res;
+}
+
+vector<int> intersection(vector<int> &nums1, vector<int> &nums2) {
+    if (nums1.empty() || nums2.empty()) return {};
+    unordered_set<int> s(nums1.begin(), nums1.end()), s2;
+    for (auto num : nums2)
+        if (s.count(num))
+            s2.insert(num);
+    vector<int> res(s2.begin(), s2.end());
+    return res;
+}
+
+int minSubArrayLen(int s, vector<int> &nums) {
+    if (nums.empty()) return 0;
+    int left = 0, right = 0, sum = 0, minlen = INT_MAX;
+    while (right < nums.size()) {
+        while (right < nums.size() && sum < s)
+            sum += nums[right++];
+        while (sum >= s) {
+            minlen = min(minlen, right - left);
+            sum -= nums[left++];
+        }
+    }
+    return minlen == INT_MAX ? 0 : minlen;
+}
+
+//2019-03-20
+int dayOfYear(string date) {
+    int p_month[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int r_month[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int year = stoi(date.substr(0, 4));
+    int month = stoi(date.substr(5, 2));
+    int day = stoi(date.substr(8, 2));
+    //cout<<year<<"-"<<month<<"-"<<day<<endl;
+    bool run = false;
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+        run = true;
+    int daycount = 0;
+    for (int i = 0; i < month - 1; ++i)
+        daycount += !run ? p_month[i] : r_month[i];
+    daycount += day;
+    return daycount;
+}
+
+#define mod 1000000007
+
+int numRollsToTarget(int d, int f, int target) {
+    int dp[d + 1][target + 1];
+    memset(dp, 0, sizeof(dp));
+    for (int i = 1; i <= f && i <= target; i++) dp[1][i] = 1;
+    for (int i = 1; i <= d; i++) {
+        for (int j = 1; j <= target; j++) {
+            for (int k = 1; k <= f && j >= k; k++) {
+                dp[i][j] = (dp[i][j] + dp[i - 1][j - k]) % mod;
+            }
+        }
+    }
+    return dp[d][target];
+}
+
+int findMin(vector<int> &nums) {
+    int left = 0, right = nums.size() - 1;
+    if (nums.size() == 1) return nums[0];
+    while (left <= right) {
+        if (nums[left] <= nums[right])
+            return nums[left];
+        int mid = left + (right - left) / 2;
+        if (nums[mid] >= nums[left])
+            left = mid + 1;
+        else
+            right = mid;
+    }
+    return nums[left];
+}
+
+int findPeakElement(vector<int> &nums) {
+    if (nums.size() == 1) return 0;
+    int before = INT_MIN;
+    for (int i = 0; i < nums.size() - 1; ++i) {
+        if (nums[i] > before)
+            if (nums[i] > nums[i + 1])
+                return i;
+        before = nums[i];
+    }
+    if (nums.back() > before) return nums.size() - 1;
+    return -1;
+}
+
+bool isPerfectSquare(int num) {
+    if (num == 1) return true;
+    int left = num / 2;
+    while ((left * left) > num)
+        left = left / 2;
+    int right = left * 2;
+    for (int i = left + 1; i <= right; ++i)
+        if (i * i == num)
+            return true;
+    return false;
+}
+
+char nextGreatestLetter(vector<char> &letters, char target) {
+    if (target == 'z') return letters.front();
+    sort(letters.begin(), letters.end());
+    int left = 0, right = letters.size() - 1;
+    while (left < right) {
+        int mid = left + (right - left) / 2;
+        if (letters[mid] < target)
+            left = mid + 1;
+        else
+            right = mid;
+    }
+    for (int i = left; i < letters.size(); ++i)
+        if (letters[i] > target)
+            return letters[i];
+    return letters[0];
+}
+
+int arrangeCoins(int n) {
+    if (n == 1) return 1;
+    int left = n / 2;
+    int cal = (left * (left + 1)) / 2;
+    int right = n;
+    while (cal > n) {
+        left = left / 2;
+        cal = (left * (left + 1)) / 2;
+    }
+    int i = left;
+    for (; i < right; ++i) {
+        cal = i * (i + 1) / 2;
+        if (cal > n)
+            break;
+    }
+    return i - 1;
+}
+
+double myPow(double x, int n) {
+    if (x == 0.0) return 0;
+    if (n == 0) return 1;
+    double res = 0.0;
+    for (int i = n; i != 0; i /= 2) {
+        if (i % 2 != 0) res *= x;
+        x *= x;
+    }
+    return n < 0 ? 1 / res : res;
+}
+
+int hIndex(vector<int> &citations) {
+    sort(citations.begin(), citations.end(), greater<int>());
+    for (int i = 0; i < citations.size(); ++i) {
+        if (citations[i] < i)
+            return i - 1;
+    }
+    return citations.size();
+}
+
+bool isHappy(int n) {
+    if (n == 1) return true;
+    unordered_map<int, int> m;
+    int sum = 0;
+    while (m[sum] != 2) {
+        sum = 0;
+        while (n != 0) {
+            int count = n % 10;
+            n = n / 10;
+            sum += count * count;
+        }
+        if(sum == 1) return true;
+        cout<<sum<<endl;
+        n = sum;
+        ++m[sum];
+    }
+    return false;
 }
 
 int main() {
-    vector<string> res;
-    string digits = "23";
-    res = letterCombinations(digits);
-    cout<<res.size()<<endl;
-    for(auto str : res)
-        cout<< str <<" ";
-    cout<<endl;
-    cout<<"hello world;";
+    vector<int> nums1{1, 2, 1, 3, 5, 6, 4};
+    vector<int> nums2{3, 0, 6, 1, 5};
+    //vector<int> res = intersection(nums1, nums2);
+    cout<<isHappy(19)<<endl;
     return 0;
 }
+
+
+
+
 
 
 
